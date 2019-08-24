@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:02-Ex.:50</title>
+</head>
+<body>
+    <label>Digite Seu Nome: </label>
+    <input type="text" name="nome" id="nome">
+    
+
+    <select name="sexo" id="sexo">
+        
+        <option>Sexo</option>
+        <option value="F">Feminino</option>
+        <option value="M">Masculino</option>
+      </select>
+
+    <button onclick="validarSexo()">Enviar</button>
+
+    <div id="saida"></div>
+</body>
+
+</html>
+
+<script>
+
+    function validarSexo(){
+        var nome = document.getElementById("nome").value
+        var sexo = document.getElementById("sexo").value
+        if ( nome != "" && sexo == "M" ){
+           document.getElementById("saida").innerHTML = "Ilmo Sr. "+nome+" favor pagar a conta em dia!";
+        }else if(nome != "" && sexo == "F" ){
+           document.getElementById("saida").innerHTML = "Ilma Sra. "+nome+" favor pagar a conta em dia!";
+        }else document.getElementById("saida").innerHTML = "Preencher todos os campos"
+    }
+</script>
