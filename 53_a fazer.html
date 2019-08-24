@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:02-Ex.:51</title>
+</head>
+<body>
+    <label>Digite um Valor: </label>
+    <input type="text" name="valor" id="valor">
+    <button onclick="grupo()">Ok</button>
+
+    <div id="saida"></div>
+</body>
+
+</html>
+
+<script>
+
+    function grupo(){
+        var num = document.getElementById("valor").value
+        var A=0;
+        var B=0;
+        if ( num >= 0){
+                 A = num
+        }else{
+                B = num
+        }
+
+        document.getElementById("saida").innerHTML = "Valor de A foi: "+A+"<br>"+"Valor de B é: "+B;
+    }
+</script>
