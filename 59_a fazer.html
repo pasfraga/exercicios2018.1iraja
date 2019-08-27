@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
-    <title>Aula:02-Ex.:51</title>
+    <title>Aula:03-Ex.:59</title>
 </head>
 <body>
-    <label>Digite um Valor: </label>
+    <label>Horas Trabalhadas: </label>
     <input type="text" name="valor" id="valor">
-    <button onclick="grupo()">Ok</button>
+    <label>Valor Recebido Por Hora: </label>
+    <input type="text" name="valor" id="valor">
+    <button onclick="parImpar()">Calcular</button>
 
     <div id="saida"></div>
 </body>
@@ -18,16 +20,12 @@
 
 <script>
 
-    function grupo(){
+    function parImpar(){
         var num = document.getElementById("valor").value
-        var A=0;
-        var B=0;
-        if ( num >= 0){
-                 A = num
+        if ( num % 2 == 0){
+           document.getElementById("saida").innerHTML ="PAR";
         }else{
-                B = num
+           document.getElementById("saida").innerHTML ="IMPAR";
         }
-
-        document.getElementById("saida").innerHTML = "Valor de A foi: "+A+"<br>"+"Valor de B é: "+B;
     }
 </script>

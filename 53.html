@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:03-Ex.:53</title>
+</head>
+<body>
+    <label>Nota 1: </label>
+    <input type="text" name="valor" id="valor1">
+    <br>
+    <label>Nota 2: </label>
+    <input type="text" name="valor" id="valor2">
+    <br>
+    <label>Nota 3: </label>
+    <input type="text" name="valor" id="valor3">
+    <br>
+    <label>Nota 4: </label>
+    <input type="text" name="valor" id="valor4">
+    <br>
+    <button onclick="situacaoAluno()">Calcular Resultado</button>
+
+    <div id="saida"></div>
+</body>
+
+</html>
+
+<script>
+
+    function situacaoAluno(){
+        var n1 = parseFloat ((document.getElementById("valor1").value).replace(',', '.'));
+        var n2 = parseFloat ((document.getElementById("valor2").value).replace(',', '.'));
+        var n3 = parseFloat ((document.getElementById("valor3").value).replace(',', '.'));
+        var n4 = parseFloat ((document.getElementById("valor4").value).replace(',', '.'));
+        var med = (n1+n2+n3+n4)/4;
+
+
+        if ( med >= 5){
+           document.getElementById("saida").innerHTML ="APROVADO"+"<br>"+"Sua Média foi: "+med+"<br>"+"PARABÉNS!!!";
+        }
+        else{
+           document.getElementById("saida").innerHTML ="REPROVADO"+"<br>"+"Sua Média foi: "+med+"<br>"+"CONTINUE ESTUDANDO!!";
+        }
+    }
+</script>
