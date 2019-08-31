@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:05-Ex.:66</title>
+    <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js></script>
+</head>
+<body ng-app="ex66"> 
+    <div ng-controller="ctrl66">
+    <label>Digite o valor do indice: </label>
+    <input type="number" name="valor1" ng-model="valor1">
+    <br>
+    
+    {{saida(valor1)}}
+</div>
+</body>
+</html>
+<script>
+    var app = angular.module("ex66",[])
+    app.controller("ctrl66",function($scope){
+        $scope.saida = function(v1){
+           console.log(v1, " - ");
+
+           if (v1 >= 0.5){
+                return "Empresas do grupo 1 , 2 e 3 devem suspender as atividades"
+            }
+            if (v1>=0.4){
+                return "Empresas do grupo 1 e 2 devem suspender as atividades"
+            }
+            if (v1>=0.3) {
+               return "Empresas do grupo 1 devem suspender as atividades"
+           }
+           else {
+            return "Nenhuma empresa precisa suspender suas atividades"
+           } 
+            
+
+        }
+           })
+</script>
