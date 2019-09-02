@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aula:05-Ex.:74</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
+</head>
+
+    <body ng-app="ex74" ng-controller="ctrl74">
+        <div ng-bind-html="saida()"></div>
+    </body>
+
+</html>
+<script>
+    var app = angular.module('ex74', ['ngSanitize']);
+    app.controller("ctrl74", function ($scope, $sce) {
+    $scope.saida = function () {
+    let result = "";
+
+        for ( var num = 1; num <= 100; num++) {
+        if (num % 10 == 0) { 
+        result += "<p>" + num + " Esse número é múltiplo de " + 10 + "</p>"; 
+
+        } else {
+        result += "<p>" + num + "</p>"
+        }
+        }
+        return $sce.trustAsHtml(result) 
+
+        }
+        })
+</script>
